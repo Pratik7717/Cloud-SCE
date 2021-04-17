@@ -1,10 +1,8 @@
 const express = require('express');
+const controller = require('./doc.controller');
 
 const router=express.Router();
 
-router.get('/',(req,res)=>{
-    res.end("Hello from express..");
-    console.log(`req reached at ${__filename}`)
-});
+router.get('/',controller.save);
 
 module.exports=router;
