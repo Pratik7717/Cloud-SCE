@@ -1,5 +1,6 @@
 const docModel = require('../schemas/doc.schema');
 
-exports.save=(doc)=>{
-    console.log(doc);
+exports.save= async (doc)=>{
+    const saved= await docModel.create(doc);
+    return saved;
 }

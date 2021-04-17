@@ -1,4 +1,4 @@
-const docService = require('docService');
+const docService = require('./doc.service');
 exports.save= async (req,res,next)=>{
     try {
       const saved=await docService.save(req.body);
