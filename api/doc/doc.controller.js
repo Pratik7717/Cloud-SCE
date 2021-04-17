@@ -1,8 +1,11 @@
-const docService = require('./doc.service');
-exports.save= (req,res,next)=>{
+const docService = require('docService');
+exports.save= async (req,res,next)=>{
     try {
-      docService.save(req.headers);
-      res.end("hello from express..")
+      const saved=await docService.save(req.body);
+      res.status(201).json({
+        success: true,
+        data: saved
+      });
     } catch (err) {
       console.log('err',err);
     }
