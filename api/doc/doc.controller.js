@@ -11,3 +11,17 @@ exports.save= async (req,res,next)=>{
     }
   
 }
+
+exports.find= async (req,res,next)=>{
+    try {
+      const data=await docService.find();
+      // const data=await transactionModel.find();
+      res.status(200).json({
+        data: data
+      });
+    //   console.log('Get req received');
+  
+    } catch (err) {
+      console.log('err in find controller method get rq: ',err);
+    }
+}
